@@ -1,27 +1,27 @@
 
 public class Main {
-    public static void main(String[] args) {
-        // FizzBuzz program
-        /*Loop through numbers 1 to 100
-        Print "Fizz" if the number is divisible by 3
-        Print "Buzz" if the number is divisible by 5
-        Print "FizzBuzz" if it's divisible by both 3 and 5
-        Otherwise, just print the number itself
-        * */
 
-        for(int i = 1; i <= 100; i++){
-            if(i%3 == 0 && i%5 == 0){
-                System.out.println("FizzBuzz");
-            }else if(i% 3 == 0){
-                System.out.println("Fizz");
-            }else if(i%5 == 0){
-                System.out.println("Buzz");
-            }else{
-                System.out.println("Number is : " + i );
-            }
+    public static int addTwoNumbers(int num1, int num2){
+        return num1 + num2;
+    }
 
+    public static String checkEvenOrOdd(int num){
+        if(num % 2 == 0){
+            return "Even";
+        }else{
+            return "Odd";
         }
+    }
 
+    public static int findMax(int a , int b){
+        return ((a > b)? a: b);
+
+    }
+
+    public static void main(String[] args) {
+    System.out.println("Sum of 2 numbers is: " +addTwoNumbers(10, 35));
+    System.out.println("The number is: " +checkEvenOrOdd(737));
+    System.out.println("The maximum is: " +findMax(1000, 45));
 
     }
 }

@@ -1,41 +1,56 @@
-import java.util.HashMap;
-
 public class Main {
 
-    public int findMax(int[] arr){
-        int x = arr[0];
-        for (int i = 0; i < arr.length ; i++){
-            if(x < arr[i]){
-                x = arr[i];
+    public int findMaxIndex(int[] arr){
+        int max = arr[0];
+        int index = 0;
+        for(int i= 1; i < arr.length; i++){
+            if(max < arr[i]){
+                max = arr[i];
+                index = i;
             }
         }
-        return x;
+        return index;
     }
 
-    public int findMin(int[] arr){
-        int x = arr[0];
-        for (int i = 0; i < arr.length ; i++){
-            if(x > arr[i]){
-                x = arr[i];
+    public void allElementsSame(int[] arr){
+        int count, num;
+        num = arr[0]; count = 0;
+        for(int i= 1; i < arr.length; i++){
+            if(num == arr[i]){
+                count++;
             }
         }
-        return x;
+        if(count == arr.length -1){
+            throw new IllegalArgumentException("All numbers are the same");
+        }
     }
 
-    public int findSum(int[] arr){
-        int sum = 0;
-        for(int i = 0; i < arr.length; i++){
-            sum += arr[i];
+    public int findN(int[] arr, int n){
+
+        allElementsSame(arr);
+
+        if(arr.length < n){
+           throw new IllegalArgumentException("Number is out of bounds and cannot be processed");
         }
 
-        return sum;
+        for(int i = 1; i < n; i++){
+            int num = findMaxIndex(arr);
+            arr[num] = Integer.MIN_VALUE;
+        }
+        int num = findMaxIndex(arr);
+        return arr[num];
     }
+
 
     public static void main(String[] args) {
-        int[] nums = {50, 246, 718, 91, 'a','A'};
+        int[] nums = {90,90,90,90,90,90};
         Main _class = new Main();
-        System.out.println("Max: " + _class.findMax(nums));
-        System.out.println("Min: " + _class.findMin(nums));
-        System.out.println("Sum: " + _class.findSum(nums));
+        int[] copyNums = nums.clone();
+        try {
+            System.out.println( "Nth Largest Number: " + _class.findN(copyNums, 2));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 }

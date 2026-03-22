@@ -1,35 +1,10 @@
-// I am using this page to list topics I am learning
-Arrays
+// I am using this page to list topics / write notes on the code
 
-what is an array ?
-    It is a collection of data stored one after another in memory.
-    It has to be the same data type
-    Can hold many values under a single name and each data can be accessed with index
+Problem: given an int array, return the second-largest element  (Edge case: what if all elements are the same?)
 
-Java can hold primitive datatype arrays AND object (String, Integer etc) datatype arrays
+Created a solution for Nth largest element . Not optimized but worth it anyway
 
-Primitive types --> Stored in Contiguous location
-Non-Primitive types --> References are stored in contiguous locations
 
-The first element index is 0.
-After creating an array , the size is fixed and cannot be changed
-
-Functions/Methods in an array
-
-Declaration + initialization:
-    int[] arr = new arr[5];
-    int[] arr = {10,20,30,40};
-
-Length: arr.length
-Access elements: arr[2] // arr[0]
-update elements : arr[0] = 90;
-
-Traverse an array: Can be done using loop. Needs to go from 0 to length - 1
-
-    for(int i= 0; i < arr.length; i++){
-        //do something
-        System.out.println(arr[i] + " ");
-    }
 
 
 

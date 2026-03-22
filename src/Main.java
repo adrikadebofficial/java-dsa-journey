@@ -1,27 +1,41 @@
+import java.util.HashMap;
 
 public class Main {
 
-    public static int addTwoNumbers(int num1, int num2){
-        return num1 + num2;
-    }
-
-    public static String checkEvenOrOdd(int num){
-        if(num % 2 == 0){
-            return "Even";
-        }else{
-            return "Odd";
+    public int findMax(int[] arr){
+        int x = arr[0];
+        for (int i = 0; i < arr.length ; i++){
+            if(x < arr[i]){
+                x = arr[i];
+            }
         }
+        return x;
     }
 
-    public static int findMax(int a , int b){
-        return ((a > b)? a: b);
+    public int findMin(int[] arr){
+        int x = arr[0];
+        for (int i = 0; i < arr.length ; i++){
+            if(x > arr[i]){
+                x = arr[i];
+            }
+        }
+        return x;
+    }
 
+    public int findSum(int[] arr){
+        int sum = 0;
+        for(int i = 0; i < arr.length; i++){
+            sum += arr[i];
+        }
+
+        return sum;
     }
 
     public static void main(String[] args) {
-    System.out.println("Sum of 2 numbers is: " +addTwoNumbers(10, 35));
-    System.out.println("The number is: " +checkEvenOrOdd(737));
-    System.out.println("The maximum is: " +findMax(1000, 45));
-
+        int[] nums = {50, 246, 718, 91, 'a','A'};
+        Main _class = new Main();
+        System.out.println("Max: " + _class.findMax(nums));
+        System.out.println("Min: " + _class.findMin(nums));
+        System.out.println("Sum: " + _class.findSum(nums));
     }
 }

@@ -1,12 +1,11 @@
-import Array.ArrayClass;
-import java.util.Arrays;
+import Sets.hashset;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = {3,4,6,4,6};
-        ArrayClass _array = new ArrayClass();
-        System.out.println(String.valueOf(_array.containsDuplicate(nums)));
 
+        int[] nums = {5,6,2,9,7,1};
+        hashset _classSet = new hashset();
+        System.out.println(_classSet.containsDuplicates(nums));
     }
 }

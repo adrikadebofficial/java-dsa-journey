@@ -4,11 +4,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = {17,42, 61,77, 35, 18, 19};
-        int target = 60;
-
+        int[] nums = {3,4,6,4,6};
         ArrayClass _array = new ArrayClass();
+        System.out.println(String.valueOf(_array.containsDuplicate(nums)));
 
-        System.out.println(Arrays.toString(_array.twoSum(nums, target)));
     }
 }

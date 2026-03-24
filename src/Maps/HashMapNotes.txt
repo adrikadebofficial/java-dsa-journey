@@ -1,0 +1,40 @@
+
+//Declare and initialize
+        HashMap<String, Integer> maps = new HashMap<>();
+
+        //Insert
+        maps.put("India", 120);
+        maps.put("USA", 30);
+        maps.put("China", 150);
+
+        System.out.println(maps); // Result is not at the same order of insertion or sorted. Unordered List
+
+        maps.put("China", 180); //If key exists , value is updated. Else new pair is inserted
+
+        System.out.println(maps);
+
+        //Search
+        if(maps.containsKey("China")){      // Containskey returns boolean
+            System.out.println("Key is present");
+        }else{
+            System.out.println("Not present");
+        }
+
+        System.out.println(maps.get("China")); // Key exists
+        System.out.println(maps.get("Indonesia")); //Key doesnt exist
+
+        //Iterator -- EntrySet
+        for(Map.Entry<String, Integer> variable : maps.entrySet()){
+            System.out.println(variable.getKey());
+            System.out.println(variable.getValue());
+        }
+        //Iterator -- KeySet
+        Set<String> keys = maps.keySet();
+        for(String key: keys){
+            System.out.print(key + " - " + maps.get(key) + "|");
+            System.out.println();
+        }
+
+        //Remove
+        maps.remove("China");
+        System.out.println(maps);

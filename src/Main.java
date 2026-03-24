@@ -1,11 +1,14 @@
-import Sets.hashset;
+import Maps.HashMaps;
+
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
+        int[] nums = {17, 19, 51, 72, 5};
+        int target = 91;
+        HashMaps hm = new HashMaps();
+        System.out.println(Arrays.toString(hm.twosum(nums, target)));;
 
-        int[] nums = {5,6,2,9,7,1};
-        hashset _classSet = new hashset();
-        System.out.println(_classSet.containsDuplicates(nums));
     }
 }

@@ -1,28 +1,12 @@
 // I am using this page to list topics / write notes on the code
 
-LeetCode #217 Contains Duplicate
+Given a sentence as a string input, write a program that counts how many times each word appears in it. Then look up a specific word and print its frequency.
+Example:
+Input sentence : "hello world hello java hello world java hello"
+Query word     : "hello"
 
-Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+Output         : 4
+Constraints to keep in mind:
 
-Example 1:
-Input: nums = [1,2,3,1]
-Output: true
-
-Explanation:
-The element 1 occurs at the indices 0 and 3.
-
-Example 2:
-Input: nums = [1,2,3,4]
-Output: false
-
-Explanation:
-All elements are distinct.
-
-Example 3:
-Input: nums = [1,1,1,3,3,4,3,2,4,2]
-Output: true
-
-Constraints:
-1 <= nums.length <= 105
--109 <= nums[i] <= 109
-
+Treat the input as case-insensitive ("Hello" and "hello" are the same)
+Words are separated by spaces

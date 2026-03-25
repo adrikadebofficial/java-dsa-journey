@@ -1,6 +1,6 @@
 package Maps;
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class HashMaps {
     //TwoSum with HashMaps
@@ -18,6 +18,32 @@ public class HashMaps {
             }
         }
         return indexArray;
+    }
+
+    public int wordFrequencyCalc(String paragraph, String word){
+        HashMap<String, Integer> map = new HashMap<>();
+        int counter;
+        String lowerParagraph = paragraph.toLowerCase();
+        String[] words = lowerParagraph.trim().split("\\s+");
+
+        for(int i=0; i< words.length; i++){
+            words[i] = words[i].replaceAll("^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$", "");
+        }
+
+        for(int i= 0; i < words.length; i++){
+            if(map.containsKey(words[i])){
+                counter = map.get(words[i]) + 1;
+                map.put(words[i], counter);
+            }else{
+                counter = 1;
+                map.put(words[i], counter);
+            }
+        }
+
+        if(map.containsKey(word)){
+            return map.get(word);
+        }
+        return 0;
     }
 
 }

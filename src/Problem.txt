@@ -1,12 +1,34 @@
 // I am using this page to list topics / write notes on the code
 
-Given a sentence as a string input, write a program that counts how many times each word appears in it. Then look up a specific word and print its frequency.
-Example:
-Input sentence : "hello world hello java hello world java hello"
-Query word     : "hello"
+You are building a simple phone book application. Implement the following operations:
 
-Output         : 4
-Constraints to keep in mind:
+ADD — Add a contact with a name and phone number
+SEARCH — Given a name, return their phone number
+DELETE — Remove a contact by name
+DISPLAY — Print all contacts in the phone book
 
-Treat the input as case-insensitive ("Hello" and "hello" are the same)
-Words are separated by spaces
+
+Input Format
+ADD Alice 98765
+ADD Bob 12345
+ADD Charlie 55555
+SEARCH Alice
+SEARCH Dave
+DELETE Bob
+DISPLAY
+
+Expected Output
+Alice added.
+Bob added.
+Charlie added.
+Alice -> 98765
+Dave not found.
+Bob deleted.
+Alice -> 98765
+Charlie -> 55555
+
+Constraints
+
+Names are unique (no two contacts have the same name)
+Phone numbers are stored as Strings (they can have leading zeros)
+SEARCH and DELETE on a non-existent name should print "[name] not found."

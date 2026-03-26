@@ -1,20 +1,45 @@
 import Maps.HashMaps;
+import Maps.Phonebook;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-       String paragraph = "The sun rises in the east and sets in the west." +
-               " The sky is blue during the day and dark during the night." +
-               " The sun is a star and the moon is not a star." +
-               " Stars are far away and the moon is not far." +
-               " The sky full of stars at night is a beautiful sight.";
 
-       String text = "the";
-       HashMaps maps = new HashMaps();
-        System.out.println(maps.wordFrequencyCalc(paragraph, text));
-        System.out.println(maps.wordFrequencyCalc(paragraph, "star"));
-        System.out.println(maps.wordFrequencyCalc(paragraph, "is"));
-        System.out.println(maps.wordFrequencyCalc(paragraph, "night"));
+        boolean flag = true;
+        Phonebook contactBook = new Phonebook();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("*********Phonebook**********");
+        System.out.println("You can ADD, SEARCH, DELETE and DISPLAY contacts.");
+
+        while(flag){
+            System.out.print("Enter your command: ");
+            String input = sc.nextLine();
+            String[] inputArray = input.trim().split("\\s+");
+            String command = inputArray[0];
+
+            switch (command){
+                case "ADD":
+                    contactBook.add(inputArray[1], inputArray[2]);
+                    break;
+                case "SEARCH":
+                    contactBook.search(inputArray[1]);
+                    break;
+                case "DELETE":
+                    contactBook.remove(inputArray[1]);
+                    break;
+                case "DISPLAY":
+                    contactBook.display();
+                    break;
+                case "EXIT":
+                    flag = false;
+                    break;
+                default:
+                    System.out.println("Either input format or command is wrong. Please try again");
+            }
+        }
 
 
     }

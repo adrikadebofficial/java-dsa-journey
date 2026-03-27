@@ -1,34 +1,27 @@
 // I am using this page to list topics / write notes on the code
 
-You are building a simple phone book application. Implement the following operations:
+Leetcode #383: Given two strings ransomNote and magazine,
+return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
 
-ADD — Add a contact with a name and phone number
-SEARCH — Given a name, return their phone number
-DELETE — Remove a contact by name
-DISPLAY — Print all contacts in the phone book
+Each letter in magazine can only be used once in ransomNote.
 
 
-Input Format
-ADD Alice 98765
-ADD Bob 12345
-ADD Charlie 55555
-SEARCH Alice
-SEARCH Dave
-DELETE Bob
-DISPLAY
 
-Expected Output
-Alice added.
-Bob added.
-Charlie added.
-Alice -> 98765
-Dave not found.
-Bob deleted.
-Alice -> 98765
-Charlie -> 55555
+Example 1:
 
-Constraints
+Input: ransomNote = "a", magazine = "b"
+Output: false
+Example 2:
 
-Names are unique (no two contacts have the same name)
-Phone numbers are stored as Strings (they can have leading zeros)
-SEARCH and DELETE on a non-existent name should print "[name] not found."
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+Example 3:
+
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+
+
+Constraints:
+
+1 <= ransomNote.length, magazine.length <= 105
+ransomNote and magazine consist of lowercase English letters.
